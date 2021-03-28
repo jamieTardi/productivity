@@ -7,6 +7,10 @@ const LayoutColumns = ({
 	setNewItemText,
 	newItem,
 	setNewItem,
+	tasks,
+	setTasks,
+	setShow,
+	show,
 }) => {
 	return (
 		<div>
@@ -15,8 +19,12 @@ const LayoutColumns = ({
 				setNewItemText={setNewItemText}
 				newItem={newItem}
 				setNewItem={setNewItem}
+				tasks={tasks}
+				setTasks={setTasks}
+				show={show}
+				setShow={setShow}
 			/>
-			<NewItems />
+			<NewItems tasks={tasks} setShow={setShow} />
 		</div>
 	);
 };
