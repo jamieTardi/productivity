@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import plus from '../../assets/icons/plus.svg';
+import { CreatedItem } from './Index';
 
 const NewItems = ({ tasks, setShow }) => {
+	const [taskModal, setTaskModal] = useState(false);
+
+	const handleOpenTask = (taskId) => {};
 	return (
 		<div className='new-items-container'>
 			<Card>
@@ -28,12 +32,15 @@ const NewItems = ({ tasks, setShow }) => {
 								<Card.Title className='d-flex justify-content-center align-center flex-column'>
 									{task.title}
 								</Card.Title>
-								<Button variant='primary'>Click to Open</Button>
+								<Button variant='primary' onClick={handleOpenTask(task.id)}>
+									Click to Open
+								</Button>
 							</Card.Body>
 						</Card>
 					</>
 				))}
 			</div>
+			{taskModal ? <CreatedItem /> : ''}
 		</div>
 	);
 };
