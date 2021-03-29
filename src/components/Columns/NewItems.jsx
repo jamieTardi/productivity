@@ -6,7 +6,13 @@ import { CreatedItem } from './Index';
 const NewItems = ({ tasks, setShow }) => {
 	const [taskModal, setTaskModal] = useState(true);
 
-	const handleOpenTask = (taskId) => {};
+	const handleOpenTask = (taskId) => {
+		tasks.filter((item) => {
+			if (item.id === taskId) {
+				return <CreatedItem />;
+			}
+		});
+	};
 	return (
 		<div className='new-items-container'>
 			<Card>
@@ -32,7 +38,11 @@ const NewItems = ({ tasks, setShow }) => {
 								<Card.Title className='d-flex justify-content-center align-center flex-column'>
 									{task.title}
 								</Card.Title>
-								<Button variant='primary' onClick={handleOpenTask(task.id)}>
+								<Button
+									variant='primary'
+									onClick={() => {
+										handleOpenTask(task.id);
+									}}>
 									Click to Open
 								</Button>
 							</Card.Body>
@@ -40,7 +50,6 @@ const NewItems = ({ tasks, setShow }) => {
 					</>
 				))}
 			</div>
-			{taskModal ? <CreatedItem tasks={tasks} /> : ''}
 		</div>
 	);
 };

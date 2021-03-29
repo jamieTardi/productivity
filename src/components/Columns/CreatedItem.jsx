@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-const CreatedItem = ({ tasks }) => {
+const CreatedItem = ({ tasks, taskId }) => {
 	const [show, setShow] = useState(true);
-	console.log(tasks);
+
 	return (
 		<div>
+			{console.log('stuff')}
 			<Modal
 				size='lg'
 				aria-labelledby='contained-modal-title-vcenter'
