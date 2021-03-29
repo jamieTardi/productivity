@@ -4,7 +4,7 @@ import plus from '../../assets/icons/plus.svg';
 import { CreatedItem } from './Index';
 
 const NewItems = ({ tasks, setShow }) => {
-	const [taskModal, setTaskModal] = useState(false);
+	const [taskModal, setTaskModal] = useState(true);
 
 	const handleOpenTask = (taskId) => {};
 	return (
@@ -40,7 +40,7 @@ const NewItems = ({ tasks, setShow }) => {
 					</>
 				))}
 			</div>
-			{taskModal ? <CreatedItem /> : ''}
+			{taskModal ? <CreatedItem tasks={tasks} /> : ''}
 		</div>
 	);
 };
