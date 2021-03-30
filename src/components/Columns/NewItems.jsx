@@ -5,14 +5,17 @@ import { CreatedItem } from './Index';
 
 const NewItems = ({ tasks, setShow }) => {
 	const [taskModal, setTaskModal] = useState(true);
+	const [selectedTask, setSelectedTask] = useState({});
 
 	const handleOpenTask = (taskId) => {
-		tasks.filter((item) => {
-			if (item.id === taskId) {
-				return <CreatedItem />;
-			}
-		});
+		setSelectedTask(
+			tasks.filter((item) => {
+				return item.id === taskId;
+			}),
+		);
 	};
+
+	console.log(selectedTask);
 	return (
 		<div className='new-items-container'>
 			<Card>
