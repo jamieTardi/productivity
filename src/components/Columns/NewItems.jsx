@@ -53,7 +53,7 @@ const NewItems = ({ tasks, setShow }) => {
 					</>
 				))}
 			</div>
-			{/* implement cretaed item */}
+			<div>{selectedTask ? <CreatedItem tasks={tasks} /> : ''}</div>
 		</div>
 	);
 };
