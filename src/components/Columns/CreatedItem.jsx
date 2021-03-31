@@ -6,7 +6,6 @@ const CreatedItem = ({ tasks, taskId }) => {
 
 	return (
 		<div>
-			{console.log('stuff')}
 			<Modal
 				size='lg'
 				aria-labelledby='contained-modal-title-vcenter'

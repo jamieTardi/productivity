@@ -5,7 +5,7 @@ import { CreatedItem } from './Index';
 
 const NewItems = ({ tasks, setShow }) => {
 	const [taskModal, setTaskModal] = useState(true);
-	const [selectedTask, setSelectedTask] = useState({});
+	const [selectedTask, setSelectedTask] = useState(null);
 
 	const handleOpenTask = (taskId) => {
 		setSelectedTask(
@@ -53,6 +53,7 @@ const NewItems = ({ tasks, setShow }) => {
 					</>
 				))}
 			</div>
+			{/* implement cretaed item */}
 		</div>
 	);
 };
