@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-const CreatedItem = ({ tasks, taskId }) => {
-	const [show, setShow] = useState(true);
-
+const CreatedItem = ({ tasks, taskId, showTaskModal, setShowTaskModal }) => {
+	//needs fixing
 	const task = tasks[0];
 	console.log(task);
 	return (
@@ -13,15 +12,17 @@ const CreatedItem = ({ tasks, taskId }) => {
 					size='lg'
 					aria-labelledby='contained-modal-title-vcenter'
 					centered
-					show={show}>
+					show={showTaskModal}>
 					<Modal.Header
 						closeButton
 						onClick={() => {
-							setShow((prev) => !prev);
+							setShowTaskModal((prev) => !prev);
 						}}>
-						<Modal.Title id='contained-modal-title-vcenter'></Modal.Title>
+						<Modal.Title id='contained-modal-title-vcenter'>
+							{task.title}
+						</Modal.Title>
 					</Modal.Header>
-					<Modal.Title>{task.title}</Modal.Title>
+
 					<Modal.Body>
 						<p>Created on: {task.date}</p>
 						<p>Author: {task.author}</p>
@@ -30,7 +31,7 @@ const CreatedItem = ({ tasks, taskId }) => {
 					<Modal.Footer>
 						<Button
 							onClick={() => {
-								setShow((prev) => !prev);
+								setShowTaskModal((prev) => !prev);
 							}}>
 							Close
 						</Button>

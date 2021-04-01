@@ -6,6 +6,7 @@ import { CreatedItem } from './Index';
 const NewItems = ({ tasks, setShow }) => {
 	const [taskModal, setTaskModal] = useState(true);
 	const [selectedTask, setSelectedTask] = useState(null);
+	const [showTaskModal, setShowTaskModal] = useState(true);
 
 	const handleOpenTask = (taskId) => {
 		setSelectedTask(
@@ -13,9 +14,9 @@ const NewItems = ({ tasks, setShow }) => {
 				return item.id === taskId;
 			}),
 		);
+		setShowTaskModal(true);
 	};
 
-	console.log(selectedTask);
 	return (
 		<div className='new-items-container'>
 			<Card>
@@ -53,7 +54,17 @@ const NewItems = ({ tasks, setShow }) => {
 					</>
 				))}
 			</div>
-			<div>{selectedTask ? <CreatedItem tasks={tasks} /> : ''}</div>
+			<div>
+				{selectedTask ? (
+					<CreatedItem
+						tasks={tasks}
+						showTaskModal={showTaskModal}
+						setShowTaskModal={setShowTaskModal}
+					/>
+				) : (
+					''
+				)}
+			</div>
 		</div>
 	);
 };
