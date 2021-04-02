@@ -43,7 +43,7 @@ const NewItems = ({ tasks, setShow, setTasks }) => {
 					<>
 						<Card>
 							<Card.Body className='d-flex justify-content-center align-center flex-column'>
-								<Card.Title className='d-flex justify-content-center align-center flex-column'>
+								<Card.Title className='d-flex justify-content-center align-center flex-column text-center'>
 									{task.title}
 								</Card.Title>
 								<Button
@@ -55,6 +55,7 @@ const NewItems = ({ tasks, setShow, setTasks }) => {
 								</Button>
 								<Button
 									variant='danger'
+									className='mt-2'
 									onClick={() => {
 										handleRemoveTask(task.id);
 									}}>

@@ -7,9 +7,8 @@ const CreatedItem = ({
 	showTaskModal,
 	setShowTaskModal,
 }) => {
-	//needs fixing
 	const task = selectedTask[0];
-	console.log(selectedTask);
+
 	return (
 		<div>
 			{selectedTask ? (

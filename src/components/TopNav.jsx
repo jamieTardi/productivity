@@ -1,4 +1,5 @@
 import React from 'react';
+import { ColumnModal } from './Columns/Index';
 import {
 	Navbar,
 	Form,
@@ -8,7 +9,10 @@ import {
 	FormControl,
 } from 'react-bootstrap';
 
-const TopNav = () => {
+const TopNav = ({ column, setColumn, createdColumns, setCreatedColumns }) => {
+	const handleCreateColumn = () => {
+		setColumn();
+	};
 	return (
 		<div>
 			<Navbar bg='dark' expand='lg'>
@@ -21,7 +25,7 @@ const TopNav = () => {
 								Create New Item
 							</NavDropdown.Item>
 							<NavDropdown.Item href='#action/3.2'>
-								Another action
+								Create a new Column
 							</NavDropdown.Item>
 							<NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
 							<NavDropdown.Divider />
@@ -36,6 +40,13 @@ const TopNav = () => {
 					</Form>
 				</Navbar.Collapse>
 			</Navbar>
+
+			<ColumnModal
+				column={column}
+				setColumn={setColumn}
+				createdColumns={createdColumns}
+				setCreatedColumns={setCreatedColumns}
+			/>
 		</div>
 	);
 };
