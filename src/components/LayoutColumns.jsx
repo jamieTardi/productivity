@@ -24,7 +24,7 @@ const LayoutColumns = ({
 				show={show}
 				setShow={setShow}
 			/>
-			<NewItems tasks={tasks} setShow={setShow} />
+			<NewItems tasks={tasks} setShow={setShow} setTasks={setTasks} />
 		</div>
 	);
 };

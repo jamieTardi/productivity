@@ -3,7 +3,7 @@ import { Card, Button } from 'react-bootstrap';
 import plus from '../../assets/icons/plus.svg';
 import { CreatedItem } from './Index';
 
-const NewItems = ({ tasks, setShow }) => {
+const NewItems = ({ tasks, setShow, setTasks }) => {
 	const [taskModal, setTaskModal] = useState(true);
 	const [selectedTask, setSelectedTask] = useState(null);
 	const [showTaskModal, setShowTaskModal] = useState(true);
@@ -15,6 +15,10 @@ const NewItems = ({ tasks, setShow }) => {
 			}),
 		);
 		setShowTaskModal(true);
+	};
+
+	const handleRemoveTask = (taskId) => {
+		setTasks(tasks.filter((item) => item.id !== taskId));
 	};
 
 	return (
@@ -49,6 +53,13 @@ const NewItems = ({ tasks, setShow }) => {
 									}}>
 									Click to Open
 								</Button>
+								<Button
+									variant='danger'
+									onClick={() => {
+										handleRemoveTask(task.id);
+									}}>
+									Remove 🗑️
+								</Button>
 							</Card.Body>
 						</Card>
 					</>
@@ -57,7 +68,7 @@ const NewItems = ({ tasks, setShow }) => {
 			<div>
 				{selectedTask ? (
 					<CreatedItem
-						tasks={tasks}
+						selectedTask={selectedTask}
 						showTaskModal={showTaskModal}
 						setShowTaskModal={setShowTaskModal}
 					/>

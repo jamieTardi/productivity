@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-const CreatedItem = ({ tasks, taskId, showTaskModal, setShowTaskModal }) => {
+const CreatedItem = ({
+	selectedTask,
+	taskId,
+	showTaskModal,
+	setShowTaskModal,
+}) => {
 	//needs fixing
-	const task = tasks[0];
-	console.log(task);
+	const task = selectedTask[0];
+	console.log(selectedTask);
 	return (
 		<div>
-			{tasks ? (
+			{selectedTask ? (
 				<Modal
 					size='lg'
 					aria-labelledby='contained-modal-title-vcenter'
@@ -26,7 +31,7 @@ const CreatedItem = ({ tasks, taskId, showTaskModal, setShowTaskModal }) => {
 					<Modal.Body>
 						<p>Created on: {task.date}</p>
 						<p>Author: {task.author}</p>
-						<p>{task.description}</p>
+						<p>Description: {task.description}</p>
 					</Modal.Body>
 					<Modal.Footer>
 						<Button
