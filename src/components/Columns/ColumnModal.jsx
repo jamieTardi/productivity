@@ -56,7 +56,7 @@ const ColumnModal = ({
 						</Button>
 					</Modal.Body>
 					<Modal.Footer>
-						<Button variant='sucess' onClick={handleCreatedColumns}>
+						<Button variant='success' onClick={handleCreatedColumns}>
 							Add Saved Columns To your teams Columns
 						</Button>
 						<Button variant='secondary' onClick={handleShow}>
