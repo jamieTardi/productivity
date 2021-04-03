@@ -29,6 +29,7 @@ function App() {
 				show={show}
 				column={column}
 				setColumn={setColumn}
+				createdColumns={createdColumns}
 			/>
 		</div>
 	);

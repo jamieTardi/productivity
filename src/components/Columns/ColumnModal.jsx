@@ -12,18 +12,18 @@ const ColumnModal = ({
 	const [show, setShow] = useState(true);
 
 	const handleNewColumn = () => {
-		setColumn({ id: uuidv4, columnName, columnColour: '#70e000' });
+		setColumn({ id: uuidv4(), columnName, columnColour: '#70e000' });
 		setColumnName('');
 	};
 
 	const handleCreatedColumns = () => {
-		setCreatedColumns(...createdColumns, column);
-		console.log(createdColumns);
+		setCreatedColumns([column, ...createdColumns]);
 	};
 
 	const handleShow = () => {
 		setShow(false);
 	};
+	console.log(createdColumns);
 
 	return (
 		<div>
@@ -47,7 +47,12 @@ const ColumnModal = ({
 								}}
 							/>
 						</Form.Group>
-						<Button onClick={handleNewColumn}>Save Column</Button>
+						<Button
+							onClick={() => {
+								handleNewColumn();
+							}}>
+							Save Column
+						</Button>
 					</Modal.Body>
 					<Modal.Footer>
 						<Button variant='sucess' onClick={handleCreatedColumns}>

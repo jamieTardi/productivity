@@ -11,6 +11,7 @@ const LayoutColumns = ({
 	setTasks,
 	setShow,
 	show,
+	createdColumns,
 }) => {
 	return (
 		<div className='d-flex'>
@@ -28,7 +29,11 @@ const LayoutColumns = ({
 				<NewItems tasks={tasks} setShow={setShow} setTasks={setTasks} />
 			</div>
 			<div>
-				<CreatedColumn />
+				{createdColumns
+					? createdColumns.map((column) => (
+							<CreatedColumn column={column} key={column.id} />
+					  ))
+					: ''}
 			</div>
 		</div>
 	);
