@@ -9,10 +9,14 @@ import {
 	FormControl,
 } from 'react-bootstrap';
 
-const TopNav = ({ column, setColumn, createdColumns, setCreatedColumns }) => {
-	const handleCreateColumn = () => {
-		setColumn();
-	};
+const TopNav = ({
+	column,
+	setColumn,
+	createdColumns,
+	setCreatedColumns,
+	showColumn,
+	setShowColumn,
+}) => {
 	return (
 		<div>
 			<Navbar bg='dark' expand='lg'>
@@ -24,7 +28,10 @@ const TopNav = ({ column, setColumn, createdColumns, setCreatedColumns }) => {
 							<NavDropdown.Item href='#action/3.1'>
 								Create New Item
 							</NavDropdown.Item>
-							<NavDropdown.Item href='#action/3.2'>
+							<NavDropdown.Item
+								onClick={() => {
+									setShowColumn((prev) => !prev);
+								}}>
 								Create a new Column
 							</NavDropdown.Item>
 							<NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
@@ -46,6 +53,8 @@ const TopNav = ({ column, setColumn, createdColumns, setCreatedColumns }) => {
 				setColumn={setColumn}
 				createdColumns={createdColumns}
 				setCreatedColumns={setCreatedColumns}
+				showColumn={showColumn}
+				setShowColumn={setShowColumn}
 			/>
 		</div>
 	);

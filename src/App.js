@@ -9,6 +9,7 @@ function App() {
 	const [show, setShow] = useState(false);
 	const [column, setColumn] = useState({});
 	const [createdColumns, setCreatedColumns] = useState([]);
+	const [showColumn, setShowColumn] = useState(false);
 
 	return (
 		<div className='App'>
@@ -17,6 +18,8 @@ function App() {
 				setColumn={setColumn}
 				createdColumns={createdColumns}
 				setCreatedColumns={setCreatedColumns}
+				showColumn={showColumn}
+				setShowColumn={setShowColumn}
 			/>
 			<LayoutColumns
 				newItemText={newItemText}
@@ -30,6 +33,8 @@ function App() {
 				column={column}
 				setColumn={setColumn}
 				createdColumns={createdColumns}
+				showColumn={showColumn}
+				setShowColumn={setShowColumn}
 			/>
 		</div>
 	);

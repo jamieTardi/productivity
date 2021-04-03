@@ -7,9 +7,10 @@ const ColumnModal = ({
 	setColumn,
 	createdColumns,
 	setCreatedColumns,
+	showColumn,
+	setShowColumn,
 }) => {
 	const [columnName, setColumnName] = useState('');
-	const [show, setShow] = useState(true);
 
 	const handleNewColumn = () => {
 		setColumn({ id: uuidv4(), columnName, columnColour: '#70e000' });
@@ -21,7 +22,7 @@ const ColumnModal = ({
 	};
 
 	const handleShow = () => {
-		setShow(false);
+		setShowColumn(false);
 	};
 	console.log(createdColumns);
 
@@ -29,7 +30,7 @@ const ColumnModal = ({
 		<div>
 			<Form>
 				<Modal
-					show={show}
+					show={showColumn}
 					onHide={handleShow}
 					backdrop='static'
 					keyboard={false}>

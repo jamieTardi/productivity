@@ -1,9 +1,10 @@
 import React from 'react';
 
-const CreatedColumn = () => {
+const CreatedColumn = ({ column }) => {
+	console.log(column);
 	return (
 		<div className='generated-column'>
-			<p>Testing</p>
+			<p>{column.columnName}</p>
 		</div>
 	);
 };
