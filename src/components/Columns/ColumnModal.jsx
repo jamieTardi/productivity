@@ -11,9 +11,10 @@ const ColumnModal = ({
 	setShowColumn,
 }) => {
 	const [columnName, setColumnName] = useState('');
+	const [columnTheme, setColumnTheme] = useState('');
 
 	const handleNewColumn = () => {
-		setColumn({ id: uuidv4(), columnName, columnColour: '#70e000' });
+		setColumn({ id: uuidv4(), columnName, columnColour: columnTheme });
 		setColumnName('');
 	};
 
@@ -27,6 +28,27 @@ const ColumnModal = ({
 
 	const handleColorPick = (e) => {
 		let selectedColor = e.target.value;
+
+		switch (selectedColor) {
+			case 'Red':
+				setColumnTheme('#F24236');
+				break;
+			case 'Green':
+				setColumnTheme('#70e000');
+				break;
+			case 'Blue':
+				setColumnTheme('#3777FF');
+				break;
+			case 'Yellow':
+				setColumnTheme('#FFE156');
+				break;
+			case 'Purple':
+				setColumnTheme('#861388');
+				break;
+			default:
+				setColumnTheme('#70e000');
+				break;
+		}
 	};
 
 	return (
