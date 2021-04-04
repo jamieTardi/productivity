@@ -4,7 +4,7 @@ const CreatedColumn = ({ column }) => {
 	console.log(column);
 	return (
 		<div className='generated-column'>
-			<p>{column.columnName}</p>
+			<p style={{ color: `${column.columnColour}` }}>{column.columnName}</p>
 		</div>
 	);
 };

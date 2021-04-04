@@ -24,7 +24,10 @@ const ColumnModal = ({
 	const handleShow = () => {
 		setShowColumn(false);
 	};
-	console.log(createdColumns);
+
+	const handleColorPick = (e) => {
+		let selectedColor = e.target.value;
+	};
 
 	return (
 		<div>
@@ -47,6 +50,18 @@ const ColumnModal = ({
 									setColumnName(e.target.value);
 								}}
 							/>
+							<Form>
+								<Form.Group controlId='exampleForm.SelectCustom'>
+									<Form.Label>Choose a column Colour scheme</Form.Label>
+									<Form.Control as='select' custom onClick={handleColorPick}>
+										<option>Red</option>
+										<option>Blue</option>
+										<option>Green</option>
+										<option>Yellow</option>
+										<option>Purple</option>
+									</Form.Control>
+								</Form.Group>
+							</Form>
 						</Form.Group>
 						<Button
 							onClick={() => {
