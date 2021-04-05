@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import plus from '../../assets/icons/plus.svg';
 import { CreatedItem } from './Index';
+import Draggable from 'react-draggable';
 
 const NewItems = ({ tasks, setShow, setTasks }) => {
 	const [taskModal, setTaskModal] = useState(true);
@@ -38,9 +39,12 @@ const NewItems = ({ tasks, setShow, setTasks }) => {
 					</Button>
 				</Card.Body>
 			</Card>
-			<div>
-				{tasks.map((task) => (
-					<>
+
+			{/* New task being created */}
+
+			{tasks.map((task) => (
+				<Draggable>
+					<div className='box'>
 						<Card>
 							<Card.Body className='d-flex justify-content-center align-center flex-column'>
 								<Card.Title className='d-flex justify-content-center align-center flex-column text-center'>
@@ -63,9 +67,10 @@ const NewItems = ({ tasks, setShow, setTasks }) => {
 								</Button>
 							</Card.Body>
 						</Card>
-					</>
-				))}
-			</div>
+					</div>
+				</Draggable>
+			))}
+
 			<div>
 				{selectedTask ? (
 					<CreatedItem

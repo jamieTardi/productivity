@@ -12,3 +12,13 @@
 	min-height: 100vh;
 	border-right: 2px solid black;
 }
+
+.box {
+	position: absolute;
+	cursor: move;
+	color: black;
+	border-radius: 5px;
+	padding: 1em;
+	margin: auto;
+	user-select: none;
+}
