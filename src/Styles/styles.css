@@ -7,7 +7,7 @@
 
 .new-items-container,
 .generated-column {
-  width: 20vw;
+  width: 235px;
   min-height: 100vh;
   border-right: 2px solid black;
 }

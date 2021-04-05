@@ -8,7 +8,11 @@ const NewItems = ({ tasks, setShow, setTasks }) => {
 	const [taskModal, setTaskModal] = useState(true);
 	const [selectedTask, setSelectedTask] = useState(null);
 	const [showTaskModal, setShowTaskModal] = useState(true);
+	const [position, setPosition] = useState({ x: 0, y: 0 });
 
+	const trackPos = (data) => {
+		setPosition({ x: data.x, y: data.y });
+	};
 	const handleOpenTask = (taskId) => {
 		setSelectedTask(
 			tasks.filter((item) => {
@@ -43,7 +47,7 @@ const NewItems = ({ tasks, setShow, setTasks }) => {
 			{/* New task being created */}
 
 			{tasks.map((task) => (
-				<Draggable>
+				<Draggable onDrag={(e, data) => trackPos(data)}>
 					<div className='box'>
 						<Card>
 							<Card.Body className='d-flex justify-content-center align-center flex-column'>
