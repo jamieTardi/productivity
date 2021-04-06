@@ -5,6 +5,10 @@
   margin: 0;
 }
 
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .new-items-container,
 .generated-column {
   width: 235px;

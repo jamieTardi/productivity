@@ -4,7 +4,11 @@ const CreatedColumn = ({ column }) => {
 	console.log(column);
 	return (
 		<div className='generated-column'>
-			<p style={{ color: `${column.columnColour}` }}>{column.columnName}</p>
+			<p
+				className='text-center pt-2'
+				style={{ color: `${column.columnColour}` }}>
+				{column.columnName}
+			</p>
 		</div>
 	);
 };
